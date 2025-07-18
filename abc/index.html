@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="axios.min.js"></script>
+</head>
+<body>
+    <h1>yeh mera home page h</h1>
+
+    <input multiple type="file" id="myFiler" />
+    <button onclick="uploadFiles()">upload karo</button>
+    
+<script>
+
+function uploadFiles(){
+
+    let formWama = new FormData();
+
+    for(let file of myFiler.files){
+        formWama.append('someThing', file);
+    }
+
+
+    axios.post('/api/upload', formWama)
+    
+}
+
+</script>
+
+</body>
+</html>
